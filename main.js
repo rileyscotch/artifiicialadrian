@@ -9,8 +9,8 @@ const options = {
         })
     }
 const openingJoke = 'https://icanhazdadjoke.com/j/X8xAlq4E6Ed';
-const gifRequest1 = 'http://api.giphy.com/v1/gifs/search?q=laugh&api_key=94nljuSXFmxmrFfM93bmBpsV3iwMMIrN'
-const gifRequest2 = 'http://api.giphy.com/v1/gifs/search?q=eyeroll&api_key=94nljuSXFmxmrFfM93bmBpsV3iwMMIrN'
+const gifRequest1 = 'https://api.giphy.com/v1/gifs/search?q=laugh&api_key=94nljuSXFmxmrFfM93bmBpsV3iwMMIrN'
+const gifRequest2 = 'https://api.giphy.com/v1/gifs/search?q=eyeroll&api_key=94nljuSXFmxmrFfM93bmBpsV3iwMMIrN'
 
 function createNode(element) {
     return document.createElement(element);
@@ -59,7 +59,6 @@ fetch(gifRequest2)
 //Initial Joke Request by ID
 fetch(openingJoke, options)
 .then(resp => resp.json())
-// .then((data) => console.log(data.joke))
 .then((data) => {
     jokeText.textContent = data.joke
 })
@@ -67,7 +66,6 @@ fetch(openingJoke, options)
 //Random joke functionality for button
 const jokeAgain = () => fetch(baseUrl, options)
     .then(resp => resp.json())
-    // .then(data => console.log(data.joke)
     .then(joke => jokeText.textContent = joke.joke)
 
 //Button Attitude Functionality
